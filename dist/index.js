@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var hello_1=require("./hello"),appElem=document.getElementById("app");appElem.innerHTML=hello_1.default();
+var appElem=document.getElementById("app");appElem.innerHTML="hello there! 12345";

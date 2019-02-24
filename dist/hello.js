@@ -1,1 +1,1 @@
-"use strict";function default_1(){return"hello there 3!"}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=default_1;
+"use strict";function default_1(){return"hello there 5!"}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=default_1;

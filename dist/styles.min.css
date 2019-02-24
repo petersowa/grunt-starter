@@ -1,1 +1,1 @@
-div{background-color:teal}div:hover{background-color:red}
+div{background-color:#6f4625;color:#ffa;font-size:28px;padding:5px;margin-bottom:10px;border-radius:.5rem;box-shadow:6px 6px 18px -4px rgba(0,0,0,.64);transition:all 50ms ease-in-out}div:hover{background-color:#cb9162}div:active{background-color:#f1e2d5;color:#884}

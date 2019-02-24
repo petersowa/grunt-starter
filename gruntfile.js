@@ -39,7 +39,8 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: ['*.scss'],
+            cwd: 'src',
+            src: ['**/*.scss'],
             dest: './css',
             ext: '.css',
           },
@@ -94,14 +95,25 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      files: ['src/*.ts', 'src/*.html', '*.scss'],
-      tasks: ['default'],
+      scripts: {
+        files: ['src/**/*.ts', 'src/**/*.scss', 'src/**/*.html'],
+        tasks: ['default'],
+        options: {
+          spawn: false,
+          livereload: {
+            base: 'dist/',
+            hostname: 'localhost',
+          },
+        },
+      },
     },
     connect: {
       server: {
         options: {
           port: 3000,
-          base: 'dist',
+          base: 'dist/',
+          livereload: true,
+          hostname: 'localhost',
         },
       },
     },
@@ -118,6 +130,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('test', ['jshint', 'qunit']);
+  grunt.registerTask('serve', ['default', 'connect:server', 'watch']);
 
   grunt.registerTask('default', [
     'ts',
@@ -126,7 +139,5 @@ module.exports = function(grunt) {
     'concat',
     'uglify',
     'copy',
-    'connect',
-    'watch',
   ]);
 };
