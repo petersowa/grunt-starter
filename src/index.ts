@@ -1,5 +1,8 @@
-// import hello from './hello';
+import hello from './hello.js';
 
 const appElem = document.getElementById('app');
 
-appElem.innerHTML = 'hello there! 12345';
+if (appElem) {
+  appElem.innerHTML = 'test 123: ' + hello();
+  console.log(hello());
+}

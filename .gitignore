@@ -1,2 +1,4 @@
-/node_modules
-/.tscache
+node_modules/
+.tscache/
+dist/
+build/

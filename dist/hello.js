@@ -1,1 +1,3 @@
-"use strict";function default_1(){return"hello there 5!"}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=default_1;
+/*! grunt-starter 2019-02-24 */
+
+export default function hello(){return"test hello"};

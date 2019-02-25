@@ -1,3 +1,3 @@
-export default function() {
-  return 'hello there 5!';
+export default function hello() {
+  return 'test hello';
 }

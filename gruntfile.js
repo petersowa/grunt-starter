@@ -6,7 +6,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     ts: {
       default: {
-        src: ['**/*.ts', '!node_modules/**'],
+        src: ['./src/**/*.ts', '!node_modules/**'],
+        tsconfig: './tsconfig.json',
       },
     },
     concat: {
@@ -15,15 +16,19 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['src/**/*.js'],
-        dest: 'dist/<%= pkg.name %>.js',
+        dest: 'build/app.js',
       },
     },
     uglify: {
+      options: {
+        banner:
+          '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+      },
       my_target: {
         files: [
           {
             expand: true,
-            cwd: 'src/',
+            cwd: 'build/',
             src: '**/*.js',
             dest: 'dist/',
           },
@@ -96,7 +101,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['src/**/*.ts', 'src/**/*.scss', 'src/**/*.html'],
+        files: ['src/**/*.ts', 'src/**/*.scss', 'src/**/*.js', 'src/**/*.html'],
         tasks: ['default'],
         options: {
           spawn: false,
@@ -119,7 +124,7 @@ module.exports = function(grunt) {
     },
   });
 
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify-es');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
