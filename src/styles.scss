@@ -1,11 +1,10 @@
 div {
-  background-color: hsl(27, 50%, 29%);
+  background-color: hsl(160, 51%, 29%);
   color: #ffa;
   font-size: 28px;
   padding: 5px;
   margin-bottom: 10px;
-  border-radius: 0.5rem;
-  box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.64);
+
   &:hover {
     background-color: hsl(27, 50%, 59%);
   }
@@ -14,4 +13,48 @@ div {
     color: #884;
   }
   transition: all 50ms ease-in-out;
+}
+
+.shadow {
+  box-shadow: 6px 6px 18px -4px rgba(0, 0, 0, 0.64);
+}
+
+.rounded {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+
+.focus-shine {
+  &:focus {
+    outline: none;
+    outline-color: red;
+
+    border-radius: 0.5rem;
+    border-color: #9ecaed;
+    box-shadow: 0 0 15px #9ecaed;
+  }
+}
+
+h2 {
+  &:before {
+    content: 'Heading: ';
+  }
+}
+
+.highlighted {
+  position: relative;
+  &:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    border-radius: 0.5rem;
+    border-color: #b5b822;
+    box-shadow: 0 0 24px #faf86b;
+  }
 }
